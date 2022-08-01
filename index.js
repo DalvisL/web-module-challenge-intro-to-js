@@ -161,7 +161,7 @@ function hungryDog(weight, dogAge){
     }
   }
 }
-console.log(hungryDog(1, 25));
+console.log(hungryDog(25, 1));
 
 
 
@@ -185,10 +185,40 @@ Use the game function below to do the following:
 
 RULES OF THE GAME: Scissors beats Paper | Paper beats Rock | Rock beats Scissors | Or there's a tie
 */
+let compChoice = Math.round(Math.random()*2);
+if(compChoice === 0 ){
+  compChoice = 'rock';
+} else if (compChoice === 1){
+  compChoice = 'paper';
+} else if(compChoice === 2) {
+  compChoice = 'scissors';
+}
 
 function game(user, computer){
-  /*add your code here*/
+  if(user === computer){
+    return "it's a tie";
+  }else if(user === 'rock') {
+    if(computer === 'scissors') {
+      return 'you win!';
+    } else if( computer === 'paper') {
+      return 'you lose!';
+    } 
+  } else if(user === 'paper'){
+    if(computer === 'rock') {
+      return 'you win!';
+    } else if(computer === 'scissors'){
+      return 'you lose!';
+    } 
+  } else if(user === 'scissors'){
+    if(computer === 'paper'){
+      return 'you win!';
+    } else if(computer === 'rock') {
+      return 'you lose!';
+    } 
+  }
 }
+ console.log(game('rock'));
+
 
 
 
